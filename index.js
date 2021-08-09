@@ -25,4 +25,4 @@ const fibonacciSequence = (n) => {
   }
 };
 
-fibonacciSequence(null);
+fibonacciSequence(5);
