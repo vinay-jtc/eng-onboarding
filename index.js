@@ -1,19 +1,18 @@
-const prompt = require("prompt-sync")();
-
-const inputNumber = parseInt(prompt("Enter the number of terms in sequence: "));
-if (inputNumber <= 0) {
-  return console.log("Number should be positive & greater than 0");
-}
+const inputNumber = parseInt(
+  prompt(
+    "Enter the number (greater than zero) upto which you want fibonacci sequence: "
+  )
+);
 
 let n1 = 0,
   n2 = 1,
-  nextTerm;
+  nextNumber;
 
-console.log("Fibonacci Series:");
+console.log("Fibonacci Sequence:");
 
 for (let i = 1; i <= inputNumber; i++) {
   console.log(n1);
-  nextTerm = n1 + n2;
+  nextNumber = n1 + n2;
   n1 = n2;
-  n2 = nextTerm;
+  n2 = nextNumber;
 }
