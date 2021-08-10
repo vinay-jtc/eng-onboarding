@@ -1,28 +1,19 @@
-const fibonacciSequence = (n) => {
-  if (typeof n == "string" || typeof n == "number") {
-    n = parseInt(n);
-  } else {
-    console.log(typeof n);
-    console.log("Please enter an integer");
-    return;
-  }
+const prompt = require("prompt-sync")();
 
-  let n1 = 0,
-    n2 = 1,
-    nextTerm;
+const inputNumber = parseInt(prompt("Enter the number of terms in sequence: "));
+if (inputNumber <= 0) {
+  return console.log("Number should be positive & greater than 0");
+}
 
-  if (n <= 0) {
-    console.log("Please enter a number greater than 0");
-  } else {
-    console.log("Fibonacci Series upto n terms:");
+let n1 = 0,
+  n2 = 1,
+  nextTerm;
 
-    for (let i = 1; i <= n; i++) {
-      console.log(n1);
-      nextTerm = n1 + n2;
-      n1 = n2;
-      n2 = nextTerm;
-    }
-  }
-};
+console.log("Fibonacci Series:");
 
-fibonacciSequence(5);
+for (let i = 1; i <= inputNumber; i++) {
+  console.log(n1);
+  nextTerm = n1 + n2;
+  n1 = n2;
+  n2 = nextTerm;
+}
